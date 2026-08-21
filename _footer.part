@@ -1,0 +1,44 @@
+<footer class="site-footer">
+  <div class="container inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/prime-structures-lockup-color-dark.svg" alt="Prime Structures">
+        <p>Tragwerksplanung, die Projekte möglich macht. Ingenieurbüro für Tragwerksplanung, Berlin.</p>
+      </div>
+      <div class="footer-col">
+        <span class="label">Leistungen</span>
+        <ul>
+          <li><a href="index.html#leistungen">Neubau</a></li>
+          <li><a href="index.html#leistungen">Bauen im Bestand</a></li>
+          <li><a href="index.html#leistungen">Beratung &amp; Nachweise</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="label">Projekte</span>
+        <ul>
+          <li><a href="projekt-friedbergstrasse.html">Friedbergstraße</a></li>
+          <li><a href="projekt-lagerhalle-philipp-pforr-strasse.html">Lagerhalle Hennigsdorf</a></li>
+          <li><a href="projekt-doppelhaus-raabestrasse.html">Doppelhaus Raabestraße</a></li>
+          <li><a href="projekte.html">Alle Projekte →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="label">Kontakt</span>
+        <address>
+          Rostockerstraße 10<br>
+          10553 Berlin<br><br>
+          <a href="tel:+4915227081206">+49 152 270 812 06</a><br>
+          <a href="mailto:giuliano.russo@primestructures.de">giuliano.russo@primestructures.de</a><br>
+          Mo–Fr · 9–19 Uhr
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prime Structures</span>
+      <a href="index.html#">Impressum</a>
+      <a href="index.html#">Datenschutz</a>
+      <a href="index.html#">FAQ</a>
+      <a href="index.html#">LinkedIn</a>
+    </div>
+  </div>
+</footer>

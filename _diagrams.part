@@ -1,0 +1,67 @@
+<div class="diagrams">
+        <div class="diagram reveal">
+          <svg viewBox="0 0 220 140" role="img" aria-label="Prinzipskizze Variante 1: Vollholz-Dachkonstruktion" fill="none">
+            <!-- walls -->
+            <path d="M30 70 V110 M190 70 V110" stroke="#0F2235" stroke-width="3"/>
+            <!-- floor -->
+            <path d="M24 110 H196" stroke="#0F2235" stroke-width="1.5"/>
+            <!-- roof outline -->
+            <path d="M30 70 L85 26 H135 L190 70" stroke="#0F2235" stroke-width="1.8"/>
+            <!-- rafters (wood, doubled) -->
+            <path d="M36 70 L88 30 M42 70 L91 33 M184 70 L132 30 M178 70 L129 33" stroke="#0F2235" stroke-width="1.2"/>
+            <path d="M88 30 H132" stroke="#0F2235" stroke-width="1.2"/>
+            <!-- collar beam (Kehlbalken) -->
+            <path d="M56 48 H164" stroke="#0F2235" stroke-width="1.8"/>
+            <path d="M96 44 L104 52 M112 44 L120 52" stroke="#0F2235" stroke-width="1"/>
+            <!-- dimension line -->
+            <path d="M30 128 H190 M30 124 V132 M190 124 V132" stroke="#8A9096" stroke-width="1"/>
+          </svg>
+          <div class="d-head">
+            <span class="d-num">V1</span>
+            <span class="d-name">Vollholz</span>
+          </div>
+          <p class="d-note">Sparren und Kehlbalken in Vollholz. Leicht, geringste Lasten in den Bestand.</p>
+        </div>
+
+        <div class="diagram diagram--active reveal d1">
+          <svg viewBox="0 0 220 140" role="img" aria-label="Prinzipskizze Variante 2: Holz-Stahl-Hybrid-Dachkonstruktion" fill="none">
+            <path d="M30 70 V110 M190 70 V110" stroke="#0F2235" stroke-width="3"/>
+            <path d="M24 110 H196" stroke="#0F2235" stroke-width="1.5"/>
+            <path d="M30 70 L85 26 H135 L190 70" stroke="#0F2235" stroke-width="1.8"/>
+            <!-- wood rafters -->
+            <path d="M38 70 L89 31 M182 70 L131 31" stroke="#0F2235" stroke-width="1.2"/>
+            <!-- steel collar beam: double flange + web ticks -->
+            <path d="M54 45 H166 M54 51 H166" stroke="#0F2235" stroke-width="1.6"/>
+            <path d="M70 45 V51 M92 45 V51 M110 45 V51 M128 45 V51 M150 45 V51" stroke="#0F2235" stroke-width="1"/>
+            <path d="M24 110 H196" stroke="#0F2235" stroke-width="1.5"/>
+            <path d="M30 128 H190 M30 124 V132 M190 124 V132" stroke="#8A9096" stroke-width="1"/>
+          </svg>
+          <div class="d-head">
+            <span class="d-num">V2</span>
+            <span class="d-name">Holz-Stahl-Hybrid</span>
+          </div>
+          <p class="d-note">Hölzerne Sparren, stählerner Hauptträger. Große Spannweite bei moderatem Gewicht.</p>
+        </div>
+
+        <div class="diagram reveal d2">
+          <svg viewBox="0 0 220 140" role="img" aria-label="Prinzipskizze Variante 3: Vollstahl-Dachkonstruktion" fill="none">
+            <path d="M30 70 V110 M190 70 V110" stroke="#0F2235" stroke-width="3"/>
+            <path d="M24 110 H196" stroke="#0F2235" stroke-width="1.5"/>
+            <path d="M30 70 L85 26 H135 L190 70" stroke="#0F2235" stroke-width="1.8"/>
+            <!-- steel portal frame: double-line columns + rafters -->
+            <path d="M56 110 V52 M62 110 V52 M164 110 V52 M158 110 V52" stroke="#0F2235" stroke-width="1.4"/>
+            <path d="M56 52 L88 30 M62 55 L92 34 M164 52 L132 30 M158 55 L128 34" stroke="#0F2235" stroke-width="1.4"/>
+            <path d="M88 30 H132 M92 34 H128" stroke="#0F2235" stroke-width="1.4"/>
+            <!-- haunches -->
+            <path d="M62 68 L78 52 M158 68 L142 52" stroke="#0F2235" stroke-width="1"/>
+            <path d="M30 128 H190 M30 124 V132 M190 124 V132" stroke="#8A9096" stroke-width="1"/>
+          </svg>
+          <div class="d-head">
+            <span class="d-num">V3</span>
+            <span class="d-name">Vollstahl</span>
+          </div>
+          <p class="d-note">Stahlrahmen mit Vouten. Maximale Öffnung des Grundrisses, höchste Lasten.</p>
+        </div>
+      </div>
+
+      <p class="caption diagrams-caption reveal">Schematische Prinzipskizzen · Bewertet nach Lastabtrag · Kosten · Bauablauf</p>
