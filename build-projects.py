@@ -14,7 +14,7 @@
 import html, io, os, re
 
 SITE = "https://primestructures.de"
-CSS_V, JS_V = "41", "16"
+CSS_V, JS_V = "50", "17"
 
 DIAGRAMS = open("_diagrams.part").read() if os.path.exists("_diagrams.part") else ""
 
@@ -226,7 +226,7 @@ HEADER = '''<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="index.html#leistungen">Leistungen</a>
       <a href="projekte.html" aria-current="page">Projekte</a>
-      <a href="index.html#ueber-uns">Über uns</a>
+      <a href="team.html">Über uns</a>
       <a href="index.html#kontakt">Kontakt</a>
     </nav>
     <a class="header-phone" href="tel:+4915227081206">+49 152 270 812 06</a>
@@ -241,7 +241,7 @@ HEADER = '''<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
   <nav aria-label="Mobile Navigation">
     <a href="projekte.html" aria-current="page">Projekte</a>
     <a href="index.html#leistungen">Leistungen</a>
-    <a href="index.html#ueber-uns">Über uns</a>
+    <a href="team.html">Über uns</a>
     <a href="index.html#kontakt">Kontakt</a>
   </nav>
   <div class="mobile-menu-foot">

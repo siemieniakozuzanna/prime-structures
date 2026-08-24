@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=41">
+<link rel="stylesheet" href="styles.css?v=50">
 </head>
 <body>
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -24,7 +24,7 @@
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
       <a href="projekte.html">Projekte</a>
-      <a href="#ueber-uns">Über uns</a>
+      <a href="team.html">Über uns</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <a class="header-phone" href="tel:+4915227081206">+49 152 270 812 06</a>
@@ -39,7 +39,7 @@
   <nav aria-label="Mobile Navigation">
     <a href="projekte.html">Projekte</a>
     <a href="#leistungen">Leistungen</a>
-    <a href="#ueber-uns">Über uns</a>
+    <a href="team.html">Über uns</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
   <div class="mobile-menu-foot">
@@ -54,7 +54,7 @@
   <div class="loadpath" aria-hidden="true">
     <i class="lp-line"></i>
     <i class="lp-node" data-anchor="#leistungen"></i>
-    <i class="lp-node" data-anchor="#kontakt"></i>
+    <i class="lp-node" data-anchor="#ablauf"></i>
   </div>
 
   <!-- 01 · Hero — reference reproduction: one full-bleed photograph,
@@ -323,13 +323,14 @@
       <div class="person-txt">
         <blockquote class="person-quote reveal">„Verlässliche Statik beginnt mit einem Partner, der Ihre Vision versteht.“</blockquote>
         <p class="person-name-y reveal d1">Giuliano Russo<span class="role">Tragwerksplaner</span></p>
-        <a class="arrow-link reveal d2" href="#ueber-uns">Mehr über Giuliano <span class="arr">→</span></a>
+        <p class="person-intro reveal d1">Persönliche Beratung, klare Kommunikation und durchdachte Tragwerksplanung — von der ersten Idee bis zum erforderlichen Nachweis.</p>
+        <a class="arrow-link reveal d2" href="team.html">Mehr über uns <span class="arr">→</span></a>
       </div>
     </div>
   </section>
 
   <!-- Act 5 — Process · Blueprint plan sheet -->
-  <section class="section band-blueprint">
+  <section class="section band-blueprint" id="ablauf">
     <div class="container">
       <p class="label reveal">So läuft es</p>
       <div class="process-rail reveal d1" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -358,48 +359,114 @@
     </div>
   </section>
 
-  <!-- 06 · Kontakt — statement + form -->
-  <section class="section k-section" id="kontakt">
-    <div class="container grid kform-grid">
-      <div class="kform-left">
-        <p class="label reveal">Kontakt</p>
-        <h2 class="k-statement reveal d1">Lassen Sie uns über Ihr Projekt sprechen.</h2>
-        <a class="k-phone reveal d2" href="tel:+4915227081206">+49 152 270 812 06</a>
-        <p class="k-meta reveal d3">Mo–Fr · 9–19 Uhr · Sie sprechen direkt mit dem Ingenieur.</p>
-        <p class="k-meta reveal d3" style="margin-top:8px;">Oder schreiben Sie uns eine Nachricht.</p>
-      </div>
-      <div class="kform-right reveal d2">
-        <form action="#" method="post">
-          <div class="field-row">
-            <div class="field">
-              <label for="f-name">Name</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required>
+  <!-- 06 · Kontakt — concentrated editorial form + info -->
+  <section class="section k-section k-section--redesigned" id="kontakt">
+    <div class="container k-redesign">
+
+      <header class="k-redesign__header reveal">
+        <h2 class="k-redesign__headline">Kontakt</h2>
+        <p class="k-redesign__intro">Sie planen ein Bauvorhaben? Wir sprechen über Statik, Bestand und die nächsten Schritte.</p>
+      </header>
+
+      <div class="k-redesign__layout">
+        <div class="k-redesign__form reveal d1">
+          <p class="k-redesign__col-label">Anfrage</p>
+          <form action="https://formspree.io/f/mwledkol" method="POST" class="contact-form" data-formspree>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="f-mail">E-Mail</label>
+                <input id="f-mail" name="email" type="email" autocomplete="email" required>
+              </div>
             </div>
             <div class="field">
-              <label for="f-mail">E-Mail</label>
-              <input id="f-mail" name="email" type="email" autocomplete="email" required>
+              <label for="f-tel">Telefon <span class="field-note">(optional)</span></label>
+              <input id="f-tel" name="tel" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="f-msg">Ihr Vorhaben</label>
+              <textarea id="f-msg" name="message" placeholder="Zwei, drei Sätze genügen." required></textarea>
+            </div>
+            <label class="dropzone" for="f-file">
+              <span class="dropzone__icon" aria-hidden="true">↑</span>
+              <span>Pläne oder Fotos anhängen. Optional — PDF, JPG oder PNG.</span>
+              <input id="f-file" name="files" type="file" multiple accept=".pdf,.jpg,.jpeg,.png">
+            </label>
+            <label class="consent">
+              <input type="checkbox" name="consent" required>
+              <span>Mit dem Senden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu. <a href="datenschutz.html">Datenschutz</a></span>
+            </label>
+            <button class="btn btn--submit" type="submit">Anfrage senden <span class="arr">→</span></button>
+          </form>
+
+          <div class="form-state form-state--success" hidden>
+            <p class="form-state__title">Anfrage erfolgreich gesendet</p>
+            <p class="form-state__text">Vielen Dank für Ihre Anfrage. Wir melden uns schnellstmöglich bei Ihnen.</p>
+          </div>
+
+          <div class="form-state form-state--error" hidden>
+            <p class="form-state__title">Fehler beim Senden</p>
+            <p class="form-state__text">Die Anfrage konnte nicht gesendet werden. Bitte prüfen Sie Ihre Eingaben und versuchen Sie es erneut.</p>
+          </div>
+        </div>
+
+        <div class="k-redesign__divider" aria-hidden="true"></div>
+
+        <div class="k-redesign__info reveal d2">
+          <p class="k-redesign__col-label">Direkt erreichbar</p>
+          <div class="contact-info">
+            <div class="contact-info__group">
+              <span class="contact-info__label">Telefon</span>
+              <a class="contact-info__value" href="tel:+4915227081206">+49 152 270 812 06</a>
+              <span class="contact-info__meta">Mo–Fr · 9–19 Uhr</span>
+            </div>
+            <div class="contact-info__group">
+              <span class="contact-info__label">E-Mail</span>
+              <a class="contact-info__value" href="mailto:giuliano.russo@primestructures.de">giuliano.russo@primestructures.de</a>
+            </div>
+            <div class="contact-info__group">
+              <span class="contact-info__label">Ansprechpartner</span>
+              <span class="contact-info__value">Giuliano Russo</span>
             </div>
           </div>
-          <div class="field">
-            <label for="f-tel">Telefon <span style="text-transform:none;letter-spacing:0;">(optional)</span></label>
-            <input id="f-tel" name="tel" type="tel" autocomplete="tel">
-          </div>
-          <div class="field">
-            <label for="f-msg">Ihr Vorhaben</label>
-            <textarea id="f-msg" name="message" placeholder="Zwei, drei Sätze genügen." required></textarea>
-          </div>
-          <label class="dropzone" for="f-file">
-            <span aria-hidden="true">↑</span>
-            <span>Pläne oder Fotos hier ablegen. Optional&nbsp;— PDF, JPG oder PNG.</span>
-            <input id="f-file" name="files" type="file" multiple accept=".pdf,.jpg,.jpeg,.png">
-          </label>
-          <label class="consent">
-            <input type="checkbox" name="consent" required>
-            <span>Mit dem Senden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu. <a href="#">Datenschutz</a></span>
-          </label>
-          <button class="btn" type="submit">Anfrage senden <span class="arr">→</span></button>
-        </form>
+        </div>
       </div>
+
+      <div class="k-redesign__footer reveal d3">
+        <div class="k-footer__block">
+          <span class="k-footer__label">Standort</span>
+          <address class="k-footer__value">Berlin–Moabit<br>Rostockerstraße 10<br>10553 Berlin</address>
+          <a class="arrow-link" href="https://maps.app.goo.gl/Akw9pMp4PvSyKywB7" target="_blank" rel="noopener noreferrer">Standort auf Google Maps <span class="arr">→</span></a>
+        </div>
+        <div class="k-footer__rail-divider" aria-hidden="true"></div>
+        <div class="k-footer__block">
+          <span class="k-footer__label">Kundenbewertungen</span>
+          <div class="google-rating">
+            <div class="google-rating__brand">
+              <svg class="google-logo" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              <span>Google Bewertungen</span>
+            </div>
+            <div class="google-rating__score" aria-label="Bewertung 5,0 von 5,0 Sternen, 23 Bewertungen">
+              <span class="google-rating__stars" aria-hidden="true">★★★★★</span>
+              <span class="google-rating__summary" aria-hidden="true">
+                <span class="google-rating__value">5,0</span>
+                <span class="google-rating__sep">·</span>
+                <span class="google-rating__count">23 Google Bewertungen</span>
+              </span>
+            </div>
+          </div>
+          <a class="arrow-link" href="https://maps.app.goo.gl/Akw9pMp4PvSyKywB7" target="_blank" rel="noopener noreferrer">Alle Bewertungen <span class="arr">→</span></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -442,14 +509,14 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Prime Structures</span>
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
-      <a href="#">FAQ</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="faq.html">FAQ</a>
       <a href="https://de.linkedin.com/in/giuliano-russo-754710209/de" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
 </footer>
 
-<script src="main.js?v=16"></script>
+<script src="main.js?v=17"></script>
 </body>
 </html>

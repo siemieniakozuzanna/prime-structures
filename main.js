@@ -43,7 +43,7 @@
 
   function layoutLoadpath() {
     if (!loadpath) return;
-    var end = document.querySelector('#kontakt');
+    var end = document.querySelector('#ablauf');
     if (!end) return;
     var endR = end.getBoundingClientRect();
     var mainR = loadpath.parentElement.getBoundingClientRect();
@@ -178,4 +178,57 @@
   window.addEventListener('load', relayout);
   layoutLoadpath();
   sweep();
+
+  // Contact form — Formspree AJAX submission (no redirect)
+  var contactForm = document.querySelector('.contact-form[data-formspree]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var parent = contactForm.parentElement;
+      var successState = parent.querySelector('.form-state--success');
+      var errorState = parent.querySelector('.form-state--error');
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+
+      if (errorState) {
+        errorState.hidden = true;
+        errorState.classList.remove('is-visible');
+      }
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Wird gesendet…';
+      }
+
+      var formData = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          contactForm.style.display = 'none';
+          if (successState) {
+            successState.hidden = false;
+            successState.classList.add('is-visible');
+            successState.focus();
+          }
+        } else {
+          throw new Error('Formspree responded with ' + response.status);
+        }
+      })
+      .catch(function () {
+        if (errorState) {
+          errorState.hidden = false;
+          errorState.classList.add('is-visible');
+          errorState.focus();
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+      });
+    });
+  }
 })();
