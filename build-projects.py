@@ -14,7 +14,7 @@
 import html, io, os, re
 
 SITE = "https://primestructures.de"
-CSS_V, JS_V = "50", "17"
+CSS_V, JS_V = "51", "17"
 
 DIAGRAMS = open("_diagrams.part").read() if os.path.exists("_diagrams.part") else ""
 

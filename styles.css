@@ -2117,7 +2117,7 @@ html.static .heroX-content .u-link { opacity: 1 !important; transform: none !imp
    while keeping the beam in the upper frame. */
 @media (max-width: 1023px) {
   .heroX { height: min(86svh, 760px); overflow: hidden; background: var(--paper); }
-  .heroX-img img { object-position: 38% 50%; }
+  .heroX-img img { object-position: 55% 50%; }
   .heroX-content .display .line { display: inline; }
   .heroX-content .display .line > span { display: inline; }
   /* Copy scales with viewport HEIGHT, not width: on a short phone the
