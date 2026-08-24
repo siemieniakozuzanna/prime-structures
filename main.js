@@ -11,10 +11,19 @@
 
   // Mobile menu
   var toggle = document.querySelector('.nav-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
   if (toggle) {
     toggle.addEventListener('click', function () {
       var open = document.body.classList.toggle('menu-open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  if (mobileMenu && toggle) {
+    Array.prototype.slice.call(mobileMenu.querySelectorAll('nav a')).forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
@@ -51,39 +60,56 @@
     });
   }
 
-  // Ablauf — the plan sheet draws itself once, when the section comes
-  // into view. Deliberately time-based rather than scroll-scrubbed:
-  // scroll position at load (restored scroll, anchor jumps) used to put
-  // the sequence at 100% before it had ever been seen.
-  // No-ops on every page without a process rail.
+  // Ablauf — looping step highlight.
+  // One step active at a time, ~3 s per step, cycling 01 -> 02 -> 03 -> 04 -> 01 ...
+  // Starts when the section enters the viewport; pauses/respects reduced motion.
   var rail = document.querySelector('.process-rail');
   var procSection = rail && rail.closest('section');
   var pDots = rail ? Array.prototype.slice.call(rail.querySelectorAll('i')) : [];
   var pSteps = Array.prototype.slice.call(document.querySelectorAll('.process-step'));
-  var procRun = false;
-  var PROC_DRAW = 2400;   // ms for the line to travel 01 -> 04
+  var procInterval = null;
+  var currentStep = 0;
+  var STEP_DURATION = 3000;
 
-  function armProcess() {
-    if (!procSection || procRun) return;
-    var r = procSection.getBoundingClientRect();
-    if (r.top > window.innerHeight * 0.72 || r.bottom < 0) return;
-    procRun = true;
-    // Feed the real point offsets into the stage clock so the line
-    // stops exactly on each point. Delays live in CSS; only the
-    // geometry is measured here.
-    var w = rail.offsetWidth;
-    if (w > 0) {
-      for (var i = 1; i < pDots.length; i++) {
-        rail.style.setProperty('--f' + i, (pDots[i].offsetLeft / w).toFixed(4));
-      }
-    }
-    procSection.classList.add('seq--run');
+  function updateActiveStep() {
+    pSteps.forEach(function (step, i) {
+      step.classList.toggle('active', i === currentStep);
+    });
+    pDots.forEach(function (dot, i) {
+      dot.classList.toggle('active', i === currentStep);
+    });
+    currentStep = (currentStep + 1) % pSteps.length;
   }
 
-  if (procSection) {
+  function startProcessLoop() {
+    if (procInterval || !pSteps.length) return;
     procSection.classList.add('seq');
-    // Reduced motion / QA: the finished drawing, with nothing moving.
-    if (isStatic || reduced) procSection.classList.add('seq--done');
+    updateActiveStep();
+    procInterval = setInterval(updateActiveStep, STEP_DURATION);
+  }
+
+  function stopProcessLoop() {
+    if (procInterval) {
+      clearInterval(procInterval);
+      procInterval = null;
+    }
+  }
+
+  function isProcessInView() {
+    if (!procSection) return false;
+    var r = procSection.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
+  }
+
+  if (procSection && !isStatic && !reduced) {
+    if (isProcessInView()) startProcessLoop();
+    window.addEventListener('scroll', function () {
+      if (isProcessInView()) {
+        startProcessLoop();
+      } else {
+        stopProcessLoop();
+      }
+    }, { passive: true });
   }
 
   var ticking = false;
@@ -115,8 +141,6 @@
     if (loadpath && (isStatic || reduced)) {
       lpNodes.forEach(function (n) { n.classList.add('lit'); });
     }
-
-    if (procSection && !isStatic && !reduced) armProcess();
 
     if (gauge) {
       var h = document.documentElement.scrollHeight - vh;
