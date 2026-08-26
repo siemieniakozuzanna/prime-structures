@@ -371,7 +371,7 @@
       <div class="k-redesign__layout">
         <div class="k-redesign__form reveal d1">
           <p class="k-redesign__col-label">Anfrage</p>
-          <form action="https://formspree.io/f/mwledkol" method="POST" class="contact-form" data-formspree>
+          <form action="senden.php" method="POST" enctype="multipart/form-data" class="contact-form" data-formspree>
             <div class="field-row">
               <div class="field">
                 <label for="f-name">Name</label>
@@ -390,7 +390,12 @@
               <label for="f-msg">Ihr Vorhaben</label>
               <textarea id="f-msg" name="message" placeholder="Zwei, drei Sätze genügen." required></textarea>
             </div>
-            <p class="caption">Pläne oder Fotos können Sie uns bei Bedarf per E-Mail zusenden.</p>
+            <label class="dropzone" for="f-file">
+              <span class="dropzone__icon" aria-hidden="true">↑</span>
+              <span>Pläne oder Fotos anhängen. Optional — PDF, JPG oder PNG.</span>
+              <input id="f-file" name="files" type="file" multiple accept=".pdf,.jpg,.jpeg,.png">
+            </label>
+            <input type="text" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
             <label class="consent">
               <input type="checkbox" name="consent" required>
               <span>Mit dem Senden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu. <a href="datenschutz.html">Datenschutz</a></span>
