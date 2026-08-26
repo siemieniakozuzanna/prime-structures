@@ -63,50 +63,73 @@ $maxTotal    = 25 * 1024 * 1024; // 25 MB
 $attachments = [];
 $totalSize   = 0;
 
-if (!empty($_FILES['files']) && is_array($_FILES['files']['name'])) {
-    $fileCount = count($_FILES['files']['name']);
-    for ($i = 0; $i < $fileCount; $i++) {
-        $error = $_FILES['files']['error'][$i];
-        if ($error === UPLOAD_ERR_NO_FILE) {
-            continue;
-        }
-        if ($error !== UPLOAD_ERR_OK) {
-            $errors[] = 'Fehler beim Hochladen von ' . basename($_FILES['files']['name'][$i]) . '.';
-            continue;
-        }
+function processUploadedFile($error, $tmpName, $origName, $size, &$errors, &$attachments, &$totalSize)
+{
+    global $maxPerFile, $maxTotal, $allowedExts, $allowedMimes;
 
-        $tmpName  = $_FILES['files']['tmp_name'][$i];
-        $origName = $_FILES['files']['name'][$i];
-        $size     = (int) $_FILES['files']['size'][$i];
+    if ($error === UPLOAD_ERR_NO_FILE) {
+        return;
+    }
+    if ($error !== UPLOAD_ERR_OK) {
+        $errors[] = 'Fehler beim Hochladen von ' . basename($origName) . '.';
+        return;
+    }
 
-        if ($size > $maxPerFile) {
-            $errors[] = basename($origName) . ' ist zu groß (max. 10 MB).';
-            continue;
-        }
-        $totalSize += $size;
-        if ($totalSize > $maxTotal) {
-            $errors[] = 'Die Gesamtgröße der Anhänge überschreitet 25 MB.';
-            break;
-        }
+    $size = (int) $size;
+    if ($size > $maxPerFile) {
+        $errors[] = basename($origName) . ' ist zu groß (max. 10 MB).';
+        return;
+    }
+    $totalSize += $size;
+    if ($totalSize > $maxTotal) {
+        $errors[] = 'Die Gesamtgröße der Anhänge überschreitet 25 MB.';
+        return;
+    }
 
-        $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
-        if (!in_array($ext, $allowedExts, true)) {
-            $errors[] = basename($origName) . ' hat ein unzulässiges Dateiformat.';
-            continue;
-        }
+    $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+    if (!in_array($ext, $allowedExts, true)) {
+        $errors[] = basename($origName) . ' hat ein unzulässiges Dateiformat.';
+        return;
+    }
 
-        $finfo = new finfo(FILEINFO_MIME_TYPE);
-        $mime  = $finfo->file($tmpName);
-        if (!in_array($mime, $allowedMimes, true)) {
-            $errors[] = basename($origName) . ' hat einen unzulässigen Dateityp.';
-            continue;
-        }
+    $finfo = new finfo(FILEINFO_MIME_TYPE);
+    $mime  = $finfo->file($tmpName);
+    if (!in_array($mime, $allowedMimes, true)) {
+        $errors[] = basename($origName) . ' hat einen unzulässigen Dateityp.';
+        return;
+    }
 
-        $attachments[] = [
-            'path' => $tmpName,
-            'name' => $origName,
-            'mime' => $mime,
-        ];
+    $attachments[] = [
+        'path' => $tmpName,
+        'name' => $origName,
+        'mime' => $mime,
+    ];
+}
+
+if (!empty($_FILES['files'])) {
+    if (is_array($_FILES['files']['name'])) {
+        $fileCount = count($_FILES['files']['name']);
+        for ($i = 0; $i < $fileCount; $i++) {
+            processUploadedFile(
+                $_FILES['files']['error'][$i],
+                $_FILES['files']['tmp_name'][$i],
+                $_FILES['files']['name'][$i],
+                $_FILES['files']['size'][$i],
+                $errors,
+                $attachments,
+                $totalSize
+            );
+        }
+    } else {
+        processUploadedFile(
+            $_FILES['files']['error'],
+            $_FILES['files']['tmp_name'],
+            $_FILES['files']['name'],
+            $_FILES['files']['size'],
+            $errors,
+            $attachments,
+            $totalSize
+        );
     }
 }
 
