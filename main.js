@@ -236,6 +236,10 @@
   document.querySelectorAll('.dropzone input[type="file"]').forEach(function (input) {
     var dropzone = input.closest('.dropzone');
     if (!dropzone) return;
+    // Cached pages may still use the old flat name; array notation is required for multiple files.
+    if (input.name === 'files') {
+      input.name = 'files[]';
+    }
     var list = dropzone.querySelector('.dropzone__files');
     if (!list) {
       list = document.createElement('span');
