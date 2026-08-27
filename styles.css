@@ -1471,10 +1471,40 @@ html.static .cover9-img { clip-path: none !important; }
   padding: 14px 0 18px;
   font-size: 15px; color: var(--steel);
   display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
   cursor: pointer;
   margin-top: 2px;
   transition: color var(--t-micro) var(--ease);
 }
+.contact-form .dropzone__files {
+  display: flex; flex-direction: column; gap: 8px;
+  width: 100%; flex-basis: 100%;
+  margin-top: 12px;
+}
+.contact-form .dropzone__file {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; line-height: 1.4;
+  color: var(--navy);
+}
+.contact-form .dropzone__file-name {
+  flex: 1 1 auto; min-width: 0;
+  overflow-wrap: anywhere; word-break: break-word;
+}
+.contact-form .dropzone__file-meta {
+  flex: none;
+  font-size: 13px; color: var(--steel);
+  white-space: nowrap;
+}
+.contact-form .dropzone__file-remove {
+  flex: none;
+  appearance: none; -webkit-appearance: none;
+  background: transparent; border: 0;
+  padding: 2px 6px;
+  font-size: 18px; line-height: 1;
+  color: var(--steel); cursor: pointer;
+}
+.contact-form .dropzone__file-remove:hover,
+.contact-form .dropzone__file-remove:focus-visible { color: var(--navy); }
 .contact-form .dropzone__icon {
   width: 28px; height: 28px;
   display: grid; place-content: center;

@@ -231,4 +231,69 @@
       });
     });
   }
+
+  // File-upload UX: show selected filenames, sizes and removable list
+  document.querySelectorAll('.dropzone input[type="file"]').forEach(function (input) {
+    var dropzone = input.closest('.dropzone');
+    if (!dropzone) return;
+    var list = dropzone.querySelector('.dropzone__files');
+    if (!list) {
+      list = document.createElement('span');
+      list.className = 'dropzone__files';
+      list.setAttribute('aria-live', 'polite');
+      dropzone.appendChild(list);
+    }
+
+    function formatSize(bytes) {
+      if (bytes === 0) return '0 KB';
+      if (bytes < 1024 * 1024) return Math.round(bytes / 1024) + ' KB';
+      return (Math.round(bytes / (1024 * 1024) * 10) / 10) + ' MB';
+    }
+
+    function renderFiles() {
+      var files = input.files;
+      list.innerHTML = '';
+      if (!files || files.length === 0) return;
+
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        var item = document.createElement('span');
+        item.className = 'dropzone__file';
+
+        var nameSpan = document.createElement('span');
+        nameSpan.className = 'dropzone__file-name';
+        nameSpan.textContent = file.name;
+
+        var metaSpan = document.createElement('span');
+        metaSpan.className = 'dropzone__file-meta';
+        metaSpan.textContent = formatSize(file.size);
+
+        var remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'dropzone__file-remove';
+        remove.setAttribute('aria-label', 'Datei entfernen');
+        remove.innerHTML = '<span aria-hidden="true">×</span>';
+        (function (idx) {
+          remove.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var dt = new DataTransfer();
+            var current = input.files;
+            for (var j = 0; j < current.length; j++) {
+              if (j !== idx) dt.items.add(current[j]);
+            }
+            input.files = dt.files;
+            renderFiles();
+          });
+        })(i);
+
+        item.appendChild(nameSpan);
+        item.appendChild(metaSpan);
+        item.appendChild(remove);
+        list.appendChild(item);
+      }
+    }
+
+    input.addEventListener('change', renderFiles);
+  });
 })();
