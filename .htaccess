@@ -1,3 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.primestructures\.de$ [NC,OR]
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://primestructures.de/$1 [L,R=301]
+</IfModule>
+
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|htm|php)$">
     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"

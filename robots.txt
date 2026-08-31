@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /senden.php
+
+Sitemap: https://primestructures.de/sitemap.xml
