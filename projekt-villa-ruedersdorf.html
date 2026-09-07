@@ -169,7 +169,11 @@
   <!-- Hero: the photograph carries the page; identity sits on the plate -->
   <section class="pp-hero">
     <figure class="pp-hero-img">
-      <img src="assets/villa-ruedersdorf.jpg" alt="Villa Rüdersdorf bei Berlin nach der Aufstockung — Hanglage mit neuem Obergeschoss" width="1600" height="900" fetchpriority="high">
+      <picture>
+        <source type="image/avif" srcset="assets/villa-ruedersdorf.avif">
+        <source type="image/webp" srcset="assets/villa-ruedersdorf.webp">
+        <img src="assets/villa-ruedersdorf.jpg" alt="Villa Rüdersdorf bei Berlin nach der Aufstockung — Hanglage mit neuem Obergeschoss" width="1600" height="900" fetchpriority="high">
+      </picture>
     </figure>
     <i class="pp-hero-veil" aria-hidden="true"></i>
     <div class="container pp-hero-id">

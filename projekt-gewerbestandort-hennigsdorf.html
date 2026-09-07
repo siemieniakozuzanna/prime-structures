@@ -169,7 +169,11 @@
   <!-- Hero: the photograph carries the page; identity sits on the plate -->
   <section class="pp-hero">
     <figure class="pp-hero-img">
-      <img src="assets/gewerbestandort-hennigsdorf.jpg" alt="Gewerbestandort Hennigsdorf — zweigeschossiger Massivbau mit Lagerhallen und Bürogeschoss" width="1800" height="1207" fetchpriority="high">
+      <picture>
+        <source type="image/avif" srcset="assets/gewerbestandort-hennigsdorf.avif">
+        <source type="image/webp" srcset="assets/gewerbestandort-hennigsdorf.webp">
+        <img src="assets/gewerbestandort-hennigsdorf.jpg" alt="Gewerbestandort Hennigsdorf — zweigeschossiger Massivbau mit Lagerhallen und Bürogeschoss" width="1800" height="1207" fetchpriority="high">
+      </picture>
     </figure>
     <i class="pp-hero-veil" aria-hidden="true"></i>
     <div class="container pp-hero-id">

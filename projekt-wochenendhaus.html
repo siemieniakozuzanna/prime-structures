@@ -165,7 +165,11 @@
   <!-- Hero: the photograph carries the page; identity sits on the plate -->
   <section class="pp-hero">
     <figure class="pp-hero-img">
-      <img src="assets/wochenendhaus.jpg" alt="Neubau Wochenendhaus — Visualisierung des holzverkleideten Baukörpers" width="1400" height="1107" fetchpriority="high">
+      <picture>
+        <source type="image/avif" srcset="assets/wochenendhaus.avif">
+        <source type="image/webp" srcset="assets/wochenendhaus.webp">
+        <img src="assets/wochenendhaus.jpg" alt="Neubau Wochenendhaus — Visualisierung des holzverkleideten Baukörpers" width="1400" height="1107" fetchpriority="high">
+      </picture>
     </figure>
     <i class="pp-hero-veil" aria-hidden="true"></i>
     <div class="container pp-hero-id">

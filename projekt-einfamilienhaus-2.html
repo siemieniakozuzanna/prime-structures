@@ -165,7 +165,11 @@
   <!-- Hero: the photograph carries the page; identity sits on the plate -->
   <section class="pp-hero">
     <figure class="pp-hero-img">
-      <img src="assets/einfamilienhaus-2.jpg" alt="Neubau Einfamilienhaus II — Ansicht mit Terrasse" width="1400" height="1150" fetchpriority="high">
+      <picture>
+        <source type="image/avif" srcset="assets/einfamilienhaus-2.avif">
+        <source type="image/webp" srcset="assets/einfamilienhaus-2.webp">
+        <img src="assets/einfamilienhaus-2.jpg" alt="Neubau Einfamilienhaus II — Ansicht mit Terrasse" width="1400" height="1150" fetchpriority="high">
+      </picture>
     </figure>
     <i class="pp-hero-veil" aria-hidden="true"></i>
     <div class="container pp-hero-id">

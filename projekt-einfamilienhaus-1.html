@@ -165,7 +165,11 @@
   <!-- Hero: the photograph carries the page; identity sits on the plate -->
   <section class="pp-hero">
     <figure class="pp-hero-img">
-      <img src="assets/einfamilienhaus-1.jpg" alt="Neubau Einfamilienhaus I — Ansicht des Wohnhauses mit Satteldach" width="1400" height="1050" fetchpriority="high">
+      <picture>
+        <source type="image/avif" srcset="assets/einfamilienhaus-1.avif">
+        <source type="image/webp" srcset="assets/einfamilienhaus-1.webp">
+        <img src="assets/einfamilienhaus-1.jpg" alt="Neubau Einfamilienhaus I — Ansicht des Wohnhauses mit Satteldach" width="1400" height="1050" fetchpriority="high">
+      </picture>
     </figure>
     <i class="pp-hero-veil" aria-hidden="true"></i>
     <div class="container pp-hero-id">

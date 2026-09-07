@@ -169,7 +169,11 @@
   <!-- Hero: the photograph carries the page; identity sits on the plate -->
   <section class="pp-hero">
     <figure class="pp-hero-img">
-      <img src="assets/friedbergstrasse.jpg" alt="Dachgeschossausbau Friedbergstraße in Berlin-Charlottenburg — Straßenansicht des Gründerzeithauses mit neuem Dachgeschoss" width="2000" height="1341" fetchpriority="high">
+      <picture>
+        <source type="image/avif" srcset="assets/friedbergstrasse.avif">
+        <source type="image/webp" srcset="assets/friedbergstrasse.webp">
+        <img src="assets/friedbergstrasse.jpg" alt="Dachgeschossausbau Friedbergstraße in Berlin-Charlottenburg — Straßenansicht des Gründerzeithauses mit neuem Dachgeschoss" width="2000" height="1341" fetchpriority="high">
+      </picture>
     </figure>
     <i class="pp-hero-veil" aria-hidden="true"></i>
     <div class="container pp-hero-id">
@@ -232,7 +236,7 @@
     <div class="container">
       <div class="pp-facts-head reveal"><h2 class="label">Weitere Ansichten</h2><i class="pp-rule" aria-hidden="true"></i></div>
       <div class="pp-gallery-grid">
-        <figure class="pp-shot pp-shot--tall reveal"><img src="assets/friedberg-tall.jpg" alt="Gründerzeitfassade der Friedbergstraße mit neuem Dachgeschoss in Stehfalzdeckung" width="1000" height="1342" loading="lazy"></figure>
+        <figure class="pp-shot pp-shot--tall reveal"><picture><source type="image/avif" srcset="assets/friedberg-tall.avif"><source type="image/webp" srcset="assets/friedberg-tall.webp"><img src="assets/friedberg-tall.jpg" alt="Gründerzeitfassade der Friedbergstraße mit neuem Dachgeschoss in Stehfalzdeckung" width="1000" height="1342" loading="lazy"></picture></figure>
       </div>
     </div>
   </section>
