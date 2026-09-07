@@ -151,8 +151,12 @@
        text in the sky's negative space -->
   <section class="heroX load-seq">
     <figure class="heroX-img" aria-hidden="true">
-      <img src="assets/hero.jpg"
-           alt="Architektonische Betonfassade — Prime Structures Tragwerksplanung Berlin" width="1672" height="941">
+      <picture>
+        <source type="image/avif" srcset="assets/hero.avif">
+        <source type="image/webp" srcset="assets/hero.webp">
+        <img src="assets/hero.jpg"
+             alt="Architektonische Betonfassade — Prime Structures Tragwerksplanung Berlin" width="1672" height="941" fetchpriority="high">
+      </picture>
     </figure>
     <i class="heroX-veil" aria-hidden="true"></i>
     <div class="heroX-content">
