@@ -226,6 +226,7 @@ HEADER = '''<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="index.html#leistungen">Leistungen</a>
       <a href="projekte.html" aria-current="page">Projekte</a>
+      <a href="insights.html">Insights</a>
       <a href="team.html">Über uns</a>
       <a href="index.html#kontakt">Kontakt</a>
     </nav>
@@ -240,6 +241,7 @@ HEADER = '''<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 <div class="mobile-menu" id="mobile-menu">
   <nav aria-label="Mobile Navigation">
     <a href="projekte.html" aria-current="page">Projekte</a>
+    <a href="insights.html">Insights</a>
     <a href="index.html#leistungen">Leistungen</a>
     <a href="team.html">Über uns</a>
     <a href="index.html#kontakt">Kontakt</a>
