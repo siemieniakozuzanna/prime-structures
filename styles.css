@@ -1,5 +1,5 @@
 /* ============================================================
-   PRIME STRUCTURES — Design system proof · v4
+   PRIME STRUCTURES: Design system proof · v4
    Primary reference: design/branding/branding_final.png
    Tokens: Warm White base · Navy primary · Blueprint/Concrete/
    Steel as materials · Yellow as event. Monochrome photography.
@@ -52,7 +52,7 @@ body {
 
 img { display: block; max-width: 100%; height: auto; }
 
-/* Photography — monochrome. Colors belong to the interface, not the photos. */
+/* Photography: monochrome. Colors belong to the interface, not the photos. */
 .img-mono { filter: grayscale(1) contrast(1.04) brightness(1.01); }
 
 a { color: inherit; text-decoration: none; }
@@ -104,7 +104,7 @@ a { color: inherit; text-decoration: none; }
 .band-concrete .caption, .band-blueprint .caption { color: var(--navy-muted); }
 .band-concrete .label, .band-blueprint .label { color: var(--navy-muted); }
 
-/* ---------- Load path — the structural datum ---------- */
+/* ---------- Load path: the structural datum ---------- */
 
 main { position: relative; }
 
@@ -220,7 +220,7 @@ main { position: relative; }
   margin-top: 14px; hyphens: none;
 }
 
-/* Keyword row — separators are quiet (yellow stays an event) */
+/* Keyword row: separators are quiet (yellow stays an event) */
 .keywords {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px;
   font-size: 13px; font-weight: 500; letter-spacing: 0.12em;
@@ -344,7 +344,7 @@ main { position: relative; }
   body.menu-open .nav-toggle .bars span:last-child { transform: translateY(-7px) rotate(-45deg); }
 }
 
-/* Mobile menu overlay — navy chapter */
+/* Mobile menu overlay: navy chapter */
 .mobile-menu {
   position: fixed; inset: 0; z-index: 60;
   background: var(--navy); color: var(--paper);
@@ -381,7 +381,7 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
   font-size: clamp(22px, 6vw, 30px);
 }
 
-/* ---------- Hero — monograph cover ----------
+/* ---------- Hero: monograph cover ----------
    One composition: a tall slab bearing from the header line down
    past the section seam (cols 10-12 + right bleed); the title
    stack interlocks beside it on the datum side. */
@@ -392,13 +392,13 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
   display: flex;
   flex-direction: column;
 }
-/* flex items with margin-inline:auto shrink-to-fit — force full width */
+/* flex items with margin-inline:auto shrink-to-fit: force full width */
 .cover > .container { width: 100%; }
 
 /* The slab. Left edge sits on the col-10 grid line at every width:
    min(75% - 8px, 50% + 352px) resolves to the same grid line for
    narrow and wide viewports. Bottom crosses the hero/standfirst
-   seam — continuity moment 1 of 2. */
+   seam: continuity moment 1 of 2. */
 .cover-plate {
   position: absolute;
   top: 0;
@@ -512,7 +512,7 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
   grid-column: 9 / span 4;
   display: flex; flex-direction: column; align-items: flex-start;
 }
-/* Spread II: mirrored — prose column left (top-aligned), fact at
+/* Spread II: mirrored: prose column left (top-aligned), fact at
    the bottom; plate right (8 cols, bleeds right). */
 .spread-txt-l {
   grid-column: 1 / span 4;
@@ -565,7 +565,7 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
 }
 .pillar-row:hover .arr, .pillar-row:focus-visible .arr { transform: translateX(6px); }
 
-/* ---------- Navy chapter — change of atmosphere ---------- */
+/* ---------- Navy chapter: change of atmosphere ---------- */
 
 .chapter { background: var(--navy); color: var(--paper); }
 .chapter.section { padding-block: clamp(72px, 9vw, 120px); }
@@ -577,7 +577,7 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
 .person-grid { align-items: center; }
 .person-img { grid-column: 1 / span 4; }
 /* The portrait breaks the band once: mounted print crossing the
-   chapter edge — continuity moment 2 of 2. */
+   chapter edge: continuity moment 2 of 2. */
 @media (min-width: 1024px) {
   .person-img {
     align-self: start;
@@ -594,7 +594,7 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
 .person-meta { margin-top: 32px; font-size: 15px; color: var(--blueprint); }
 .person-txt .arrow-link { margin-top: 24px; }
 
-/* ---------- Process — the plan sheet (Blueprint) ---------- */
+/* ---------- Process: the plan sheet (Blueprint) ---------- */
 
 .process-rail {
   position: relative;
@@ -748,7 +748,7 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
 .loesung-txt { grid-column: 1 / span 6; }
 .loesung-fact { grid-column: 9 / span 4; }
 
-/* Variantenuntersuchung — the plan sheet set piece.
+/* Variantenuntersuchung: the plan sheet set piece.
    Layout prepared so future drawing assets replace the inline
    SVG prinzipskizzen 1:1 inside each .diagram figure. */
 .diagrams {
@@ -789,7 +789,7 @@ body.menu-open .mobile-menu nav a:nth-child(5) { transition-delay: 160ms; }
   position: relative; font-size: 17px;
 }
 .scope-list li::before {
-  content: "—"; position: absolute; left: 0; color: var(--steel);
+  content: "–"; position: absolute; left: 0; color: var(--steel);
 }
 
 .handoff .h2 { margin-bottom: 36px; }
@@ -888,7 +888,7 @@ html.static .site-header { backdrop-filter: none; background: var(--paper); }
 html.static .cover { min-height: 0; }
 html.static .cover-plate { position: static; height: 560px; margin-left: min(calc(75% - 8px), calc(50% + 352px)); width: auto; }
 
-/* ---------- Projektindex — editorial staggered publication ---------- */
+/* ---------- Projektindex: editorial staggered publication ---------- */
 
 .pi-hero { padding-top: clamp(64px, 9vh, 128px); }
 .pi-hero .h1 { margin-top: 24px; }
@@ -947,7 +947,7 @@ html.static .cover-plate { position: static; height: 560px; margin-left: min(cal
 .pi-type .arrow-link { margin-top: 26px; }
 .pi-type .fact { font-size: clamp(72px, 9vw, 132px); }
 
-/* Tier 2 — Kompakt block: denser, quieter, same language */
+/* Tier 2: Kompakt block: denser, quieter, same language */
 .pi-tier2 { border-top: 1px solid var(--hairline); padding-top: clamp(48px, 6vw, 80px); margin-top: clamp(96px, 12vw, 168px); }
 .pi-compact-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -970,7 +970,7 @@ html.static .cover-plate { position: static; height: 560px; margin-left: min(cal
 .kompakt-note { max-width: 40ch; color: var(--steel); font-size: 16px; }
 
 /* ============================================================
-   PROJECT PORTFOLIO — projekte.html editorial grid
+   PROJECT PORTFOLIO: projekte.html editorial grid
    Distinct from the homepage project band: card-based archive
    with yellow accents, varying scales, and preserved filtering.
    ============================================================ */
@@ -1212,7 +1212,7 @@ html.static .cover-plate { position: static; height: 560px; margin-left: min(cal
 }
 
 /* ============================================================
-   v9 — reference-direction homepage
+   v9: reference-direction homepage
    ============================================================ */
 
 /* ---------- Hero v9: split cover (type left · plate right) ---------- */
@@ -1270,7 +1270,7 @@ html.static .cover-plate { position: static; height: 560px; margin-left: min(cal
 html.static .cover9 { min-height: 720px; }
 html.static .cover9-img { clip-path: none !important; }
 
-/* ---------- Leistungen — three structural capabilities ---------- */
+/* ---------- Leistungen: three structural capabilities ---------- */
 .svc-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 48px var(--gutter);
@@ -1372,7 +1372,7 @@ html.static .cover9-img { clip-path: none !important; }
   .field-row { grid-template-columns: 1fr; }
 }
 
-/* ---------- Redesigned homepage contact — editorial, compact ---------- */
+/* ---------- Redesigned homepage contact: editorial, compact ---------- */
 .k-section--redesigned {
   border-top: 0;
   background: #F7F7F5;
@@ -1728,7 +1728,7 @@ html.static .cover9-img { clip-path: none !important; }
 }
 
 /* ============================================================
-   v10 — reference-faithful composition
+   v10: reference-faithful composition
    ============================================================ */
 
 /* Hero: compact split, plate flush to top+right */
@@ -1736,11 +1736,11 @@ html.static .cover9-img { clip-path: none !important; }
 .cover9-txt { padding-block: clamp(40px, 7vh, 88px); }
 html.static .cover9 { min-height: 640px; }
 
-/* ---------- Leistungen — typographic band ----------
+/* ---------- Leistungen: typographic band ----------
    Strength from scale and alignment, not ornament. Three registers per
    column: a thin annotation row (index · rule · small mark), a dominant
    title, then quiet copy sitting above a Blueprint rule that carries the
-   CTA. Navy is the voice, Blueprint the accent. No yellow at rest — on
+   CTA. Navy is the voice, Blueprint the accent. No yellow at rest: on
    this warm white it has no presence; it survives only as the CTA's
    active mark. Tighter than the previous pass in every direction. */
 
@@ -1748,7 +1748,7 @@ html.static .cover9 { min-height: 640px; }
 
 .svc-band { display: block; }
 
-/* Register 1 — label, running rule, sheet index */
+/* Register 1: label, running rule, sheet index */
 .svc-band-head {
   display: flex; align-items: center;
   gap: clamp(16px, 2vw, 28px);
@@ -1768,7 +1768,7 @@ html.static .cover9 { min-height: 640px; }
   font-variant-numeric: tabular-nums;
 }
 
-/* Register 2 — three columns under one strong opening rule */
+/* Register 2: three columns under one strong opening rule */
 .svc-band-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1784,7 +1784,7 @@ html.static .cover9 { min-height: 640px; }
 .svc-band-grid .svc:first-child { padding-left: 0; }
 .svc-band-grid .svc:last-child { padding-right: 0; }
 
-/* Annotation row — index, rule, mark. The rule ties the row together
+/* Annotation row: index, rule, mark. The rule ties the row together
    instead of leaving three loose objects floating. */
 .svc-head {
   display: flex; align-items: center; gap: clamp(12px, 1.4vw, 18px);
@@ -1829,7 +1829,7 @@ html.static .cover9 { min-height: 640px; }
   -webkit-hyphens: none;
 }
 
-/* CTA — a deliberate row on a Blueprint rule, arrow on the far margin */
+/* CTA: a deliberate row on a Blueprint rule, arrow on the far margin */
 .svc-link {
   position: relative;
   margin-top: auto;
@@ -1878,7 +1878,7 @@ html.static .cover9 { min-height: 640px; }
 .person-txt .arrow-link { margin-top: clamp(28px, 3.6vw, 40px); }
 
 /* ============================================================
-   v11 — approved-reference reproduction
+   v11: approved-reference reproduction
    ============================================================ */
 
 /* Hero: blueprint-washed band, compact, reference proportions */
@@ -1903,7 +1903,7 @@ html.static .cover9 { min-height: 560px; }
 }
 
 /* ============================================================
-   PROJEKTE — architecture portfolio
+   PROJEKTE: architecture portfolio
    One 12-column grid, four composition types, nothing else:
      A featured  image 1-8   · info 9-12
      B pair      two items   · span 6 each
@@ -1911,7 +1911,7 @@ html.static .cover9 { min-height: 560px; }
      D archive   four items  · span 3 each
    Every image is locked to a fixed aspect-ratio + object-fit:cover so
    source proportions never leak into the layout. Info blocks sit either
-   in columns 9-12 or directly under their own image — no third option.
+   in columns 9-12 or directly under their own image: no third option.
    Photography carries the colour; the UI stays navy on concrete.
    ============================================================ */
 
@@ -1923,10 +1923,10 @@ html.static .cover9 { min-height: 560px; }
 }
 .pj + .pj { margin-top: clamp(72px, 8vw, 124px); }
 .pj figure { margin: 0; }
-/* Square corners throughout — architectural, not soft UI */
+/* Square corners throughout: architectural, not soft UI */
 .pj img, .pj figure, .pj-item { border-radius: 0; }
 .pj img { width: 100%; display: block; }
-/* 12px caption inherits the 28px body line box — too tall for the
+/* 12px caption inherits the 28px body line box: too tall for the
    reserved caption slot. Tighten its own leading only; no layout moves. */
 .pj .caption { margin-top: 11px; line-height: 1.4; }
 
@@ -1961,7 +1961,7 @@ html.static .cover9 { min-height: 560px; }
   margin-top: 9px; line-height: 1.5; hyphens: none;
 }
 
-/* CTA — navy on light ground; no yellow anywhere in this section */
+/* CTA: navy on light ground; no yellow anywhere in this section */
 .p-cta {
   display: inline-flex; align-items: center; gap: 11px;
   position: relative; width: fit-content;
@@ -2020,7 +2020,7 @@ html.static .cover9 { min-height: 560px; }
 /* --- C · WIDE --- */
 .pj--wide .pj-img  { grid-column: 1 / span 12; }
 /* Info sits beside the image in FEATURED and beneath its leading edge
-   in WIDE — two principled positions, both a 4-column module. */
+   in WIDE: two principled positions, both a 4-column module. */
 .pj--wide .pj-info { grid-column: 1 / span 4; }
 .pj--wide .pj-img img { aspect-ratio: 12 / 5; object-fit: cover; object-position: 50% 58%; }
 
@@ -2042,7 +2042,7 @@ html.static .cover9 { min-height: 560px; }
 /* --- Responsive: the same four types, fewer columns --- */
 @media (max-width: 1023px) {
   /* Narrow columns can wrap a caption onto two lines, so take it out of
-     absolute positioning here — a stacked caption can never collide. */
+     absolute positioning here: a stacked caption can never collide. */
   .pj--pair .pj-img .caption,
   .pj--archive .pj-img .caption { position: static; margin-top: 11px; }
   .pj--pair .pj-info { margin-top: clamp(16px, 2vw, 22px); }
@@ -2084,7 +2084,7 @@ html.static .load-seq .cover9-txt .u-link,
 html.static .load-seq .display .line > span { opacity: 1 !important; transform: none !important; animation: none !important; }
 
 /* ============================================================
-   v12 — hero reproduction: one full-bleed photograph,
+   v12: hero reproduction: one full-bleed photograph,
    text in the sky's negative space (reference-exact)
    ============================================================ */
 .heroX {
@@ -2160,7 +2160,7 @@ html.static .heroX-content .u-link { opacity: 1 !important; transform: none !imp
 .heroX-content .display .line { padding-right: 0.08em; }
 
 /* ============================================================
-   v14 — header drawn on the hero (homepage only)
+   v14: header drawn on the hero (homepage only)
    The photograph starts at the page top; the navigation is part
    of the picture plane, not a strip above it. Scoped to
    .site-header--over so the inner pages keep their solid bar.
@@ -2181,14 +2181,14 @@ html.static .heroX-content .u-link { opacity: 1 !important; transform: none !imp
 
 html.static .site-header--over { background: transparent; backdrop-filter: none; }
 
-/* Wordmark — 25% larger, full black, stable at every scroll state */
+/* Wordmark: 25% larger, full black, stable at every scroll state */
 .site-header--over .logo img,
 .site-header--over.scrolled .logo img { height: 50px; }
 
 /* Hero copy clears the navigation register */
 .site-header--over ~ main .heroX-content { padding-top: clamp(148px, 22svh, 200px); }
 
-/* Legibility veil — the photograph's beam soffit runs dark exactly
+/* Legibility veil: the photograph's beam soffit runs dark exactly
    under "Über uns"/"Kontakt" (measured min. luminance 35–61, i.e.
    1.4–1.9:1 against navy). A long, edgeless warm-white graduation
    lifts that zone to ~5:1 without reading as a bar: over the sky
@@ -2225,7 +2225,7 @@ html.static .site-header--over { background: transparent; backdrop-filter: none;
 }
 
 /* ============================================================
-   ABLAUF — looping step highlight
+   ABLAUF: looping step highlight
    One step is active at a time. Every ~3 seconds the next step
    lights up and the previous step returns to grey. The cycle loops
    continuously while the section is in view.
@@ -2257,7 +2257,7 @@ html.static .site-header--over { background: transparent; backdrop-filter: none;
 }
 
 /* ============================================================
-   GIULIANO PAGE — personal profile
+   GIULIANO PAGE: personal profile
    ============================================================ */
 
 .profile-hero.chapter.section { padding-block: clamp(80px, 10vw, 140px); }
@@ -2501,7 +2501,7 @@ html.static .site-header--over { background: transparent; backdrop-filter: none;
 }
 
 /* ============================================================
-   PROJECT PAGES — one template, generated by build-projects.py
+   PROJECT PAGES: one template, generated by build-projects.py
    Extends the homepage system: same header treatment over the hero,
    same 12-column container, same navy/warm-white/blueprint palette,
    same hairline rules, same navy CTA. Nothing here is used on the
@@ -2517,7 +2517,7 @@ html.static .site-header--over { background: transparent; backdrop-filter: none;
   background: var(--paper);
 }
 .pp-hero-img { position: absolute; inset: 0; margin: 0; }
-/* Architecture crops badly from the centre — the foreground is usually
+/* Architecture crops badly from the centre: the foreground is usually
    street. Favour just above centre so the building keeps the frame. */
 .pp-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
 /* Warm-white graduation: navy type over photography needs a floor, and
@@ -2827,7 +2827,7 @@ html.static .site-header--over { background: transparent; backdrop-filter: none;
   .review-card:hover { transform: none; }
 }
 
-/* ---------- Insights — knowledge section & article ---------- */
+/* ---------- Insights: knowledge section & article ---------- */
 .insights-list { display: grid; gap: var(--gutter); }
 .feature-card {
   display: grid;
@@ -2986,7 +2986,7 @@ html.static .site-header--over { background: transparent; backdrop-filter: none;
 .insight-callout p + p { margin-top: 0.9em; }
 .insight-callout .arrow-link { margin-top: 18px; }
 
-/* Flow diagram — material becomes structure (CSS-built, responsive) */
+/* Flow diagram: material becomes structure (CSS-built, responsive) */
 .flow-rail { margin: clamp(36px, 4vw, 56px) 0; }
 .flow-rail ol {
   margin: 0; padding: 0;

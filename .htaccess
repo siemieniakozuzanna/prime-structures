@@ -4,7 +4,7 @@
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://primestructures.de/$1 [L,R=301]
 
-  # Serve the homepage only at / — /index.html redirects permanently
+  # Serve the homepage only at /: /index.html redirects permanently
   RewriteCond %{THE_REQUEST} \s/index\.html\s [NC]
   RewriteRule ^index\.html$ / [R=301,L]
 </IfModule>

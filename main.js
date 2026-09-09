@@ -1,4 +1,4 @@
-// PRIME STRUCTURES — proof pages
+// PRIME STRUCTURES: proof pages
 // Motion: assembly/consequence. One easing, reveals fire once,
 // load-path draws with scroll, reduced-motion respected.
 
@@ -27,14 +27,14 @@
     });
   }
 
-  // Reveals — position sweep (robust against fast scroll jumps), fires once
+  // Reveals: position sweep (robust against fast scroll jumps), fires once
   var revealables = Array.prototype.slice.call(
     document.querySelectorAll('.reveal, .wipe, .reveal-rule')
   );
 
   var gauge = document.querySelector('.gauge span');
 
-  // Load path — structural datum: line spans standfirst → kontakt,
+  // Load path: structural datum: line spans standfirst → kontakt,
   // draws with scroll, yellow nodes light when the line reaches them.
   var loadpath = document.querySelector('.loadpath');
   var lpLine = loadpath && loadpath.querySelector('.lp-line');
@@ -60,7 +60,7 @@
     });
   }
 
-  // Ablauf — looping step highlight.
+  // Ablauf: looping step highlight.
   // One step active at a time, ~3 s per step, cycling 01 -> 02 -> 03 -> 04 -> 01 ...
   // Starts when the section enters the viewport; pauses/respects reduced motion.
   var rail = document.querySelector('.process-rail');
@@ -179,7 +179,7 @@
   layoutLoadpath();
   sweep();
 
-  // Contact form — Formspree AJAX submission (no redirect)
+  // Contact form: Formspree AJAX submission (no redirect)
   var contactForm = document.querySelector('.contact-form[data-formspree]');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
@@ -302,7 +302,7 @@
   });
 })();
 
-// Reviews — scroll-snap carousel controls (mobile only; desktop shows all three cards)
+// Reviews: scroll-snap carousel controls (mobile only; desktop shows all three cards)
 (function () {
   var scroller = document.querySelector('.reviews-scroller');
   if (!scroller) return;

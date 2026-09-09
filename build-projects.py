@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # =============================================================================
-# PRIME STRUCTURES — project page generator
+# PRIME STRUCTURES, project page generator
 #
 # One template, one data table, eleven pages. Change the template or the CSS
 # and every project page changes with it. Run:  python3 build-projects.py
@@ -8,7 +8,7 @@
 # RULE: nothing in PROJECTS may be invented. Every value here traces to the
 # original project pages (data strips) or projects_info.pdf as recorded in
 # "PROJECT INVENTORY & COLOR RHYTHM.md". Fields with no documented value are
-# simply omitted — the template never prints an empty or [TBD] row.
+# simply omitted: the template never prints an empty or [TBD] row.
 # =============================================================================
 
 import html, io, os, re
@@ -27,34 +27,34 @@ PROJECTS = [
   slug="friedbergstrasse", name="Dachgeschossausbau Friedbergstraße", cat="Bauen im Bestand",
   descriptor="Tragwerksplanung für den Ausbau eines Gründerzeit-Dachgeschosses zu Wohnraum.",
   hero="friedbergstrasse.jpg", hero_w=2000, hero_h=1341,
-  hero_alt="Dachgeschossausbau Friedbergstraße in Berlin-Friedrichshain — Straßenansicht des Gründerzeithauses mit neuem Dachgeschoss",
+  hero_alt="Dachgeschossausbau Friedbergstraße in Berlin-Friedrichshain, Straßenansicht des Gründerzeithauses mit neuem Dachgeschoss",
   facts=[("Projektart","Bauen im Bestand"),("Standort","Berlin-Friedrichshain"),
          ("Bestand","Gründerzeit-Mehrfamilienhaus, Baujahr um 1910"),
-         ("Konstruktion","Vollholz / Holz-Stahl-Hybrid / Vollstahl — in Untersuchung"),
+         ("Konstruktion","Vollholz / Holz-Stahl-Hybrid / Vollstahl, in Untersuchung"),
          ("Leistung","Komplette Tragwerksplanung"),("Status","In Planung")],
-  aufgabe="Ein Gründerzeit-Mehrfamilienhaus, Baujahr um 1910. Das Dachgeschoss soll Wohnraum werden. Die Frage an die Tragwerksplanung: Welche Dachkonstruktion trägt der Bestand — und welche trägt sich wirtschaftlich?",
+  aufgabe="Ein Gründerzeit-Mehrfamilienhaus, Baujahr um 1910. Das Dachgeschoss soll Wohnraum werden. Die Frage an die Tragwerksplanung: Welche Dachkonstruktion trägt der Bestand, und welche trägt sich wirtschaftlich?",
   loesung="Wir haben drei Tragwerksvarianten für die neue Dachkonstruktion untersucht und jede nach Lastabtrag in den Bestand, Kosten und Bauablauf bewertet. So entscheidet der Bauherr auf Grundlage von Zahlen, nicht von Annahmen.",
   facts_big=[("1910","Baujahr Bestand"),("3","Varianten untersucht")],
   diagrams=True, diagrams_label="Variantenuntersuchung · Dachkonstruktion",
   scope=["Komplette Tragwerksplanung","Variantenuntersuchung der Dachkonstruktion",
          "Nachweis des Lastabtrags in den Bestand"],
   gallery=[("friedberg-tall.jpg",1000,1342,"Gründerzeitfassade der Friedbergstraße mit neuem Dachgeschoss in Stehfalzdeckung","tall")],
-  title="Dachgeschossausbau Friedbergstraße Berlin — Tragwerksplanung | Prime Structures",
+  title="Dachgeschossausbau Friedbergstraße Berlin: Tragwerksplanung | Prime Structures",
   desc="Tragwerksplanung für den Dachgeschossausbau eines Gründerzeithauses von 1910 in Berlin-Friedrichshain: Variantenuntersuchung Vollholz, Holz-Stahl-Hybrid und Vollstahl."),
 
  dict(
   slug="villa-ruedersdorf", name="Aufstockung Villa Rüdersdorf", cat="Bauen im Bestand",
   descriptor="Tragwerksplanung für Aufstockung und Umbau eines Mehrfamilienhauses in Hanglage.",
   hero="villa-ruedersdorf.jpg", hero_w=1600, hero_h=900,
-  hero_alt="Villa Rüdersdorf bei Berlin nach der Aufstockung — Hanglage mit neuem Obergeschoss",
+  hero_alt="Villa Rüdersdorf bei Berlin nach der Aufstockung, Hanglage mit neuem Obergeschoss",
   facts=[("Projektart","Bauen im Bestand"),("Standort","Rüdersdorf bei Berlin"),
          ("Konstruktion","Aufstockung · Pfosten-Riegel-Fassade"),
          ("Leistung","Tragwerksplanung · Genehmigungsstatik"),("Status","Fertiggestellt")],
-  aufgabe="Ein Mehrfamilienhaus in Hanglage. Der Bauherr wollte ein zusätzliches Dachgeschoss — und einen Wintergarten mit Glasfassade.",
+  aufgabe="Ein Mehrfamilienhaus in Hanglage. Der Bauherr wollte ein zusätzliches Dachgeschoss und einen Wintergarten mit Glasfassade.",
   loesung="Tragwerksplanung für Aufstockung und Umbau: Das neue Geschoss trägt in den Bestand ab, der Wintergarten steht als Pfosten-Riegel-Konstruktion aus Glas und Stahl.",
   scope=["Tragwerksplanung für Aufstockung und Umbau","Genehmigungsstatik",
          "Pfosten-Riegel-Konstruktion des Wintergartens"],
-  title="Aufstockung Villa Rüdersdorf — Statik & Tragwerksplanung | Prime Structures",
+  title="Aufstockung Villa Rüdersdorf: Statik & Tragwerksplanung | Prime Structures",
   desc="Tragwerksplanung für Umbau und Aufstockung eines Mehrfamilienhauses in Hanglage in Rüdersdorf bei Berlin, mit Wintergarten in Pfosten-Riegel-Bauweise."),
 
  dict(
@@ -72,21 +72,21 @@ PROJECTS = [
   facts_big=[("24","Plätze · 6 rollstuhlgerecht")],
   scope=["Ermittlung der Bestandslasten","Nachweis neuer und verbreiterter Öffnungen",
          "Bemessung der Stahlstürze"],
-  title="Umnutzung Dänenstraße Prenzlauer Berg — Statik Altbau | Prime Structures",
+  title="Umnutzung Dänenstraße Prenzlauer Berg: Statik Altbau | Prime Structures",
   desc="Statik für die Umnutzung eines Altbau-Erdgeschosses in Berlin-Prenzlauer Berg: neue Öffnungen in tragenden Wänden, Bestandslasten und Bemessung der Stahlstürze."),
 
  dict(
   slug="gewerbestandort-hennigsdorf", name="Gewerbestandort Hennigsdorf", cat="Gewerbe",
   descriptor="Tragwerksplanung für Lager, Büro und Wohnen unter einem Dach.",
   hero="gewerbestandort-hennigsdorf.jpg", hero_w=1800, hero_h=1207,
-  hero_alt="Gewerbestandort Hennigsdorf — zweigeschossige Lagerhalle mit Büro- und Wohngeschoss",
+  hero_alt="Gewerbestandort Hennigsdorf, zweigeschossige Lagerhalle mit Büro- und Wohngeschoss",
   facts=[("Projektart","Gewerbe"),("Standort","Hennigsdorf"),
          ("Nutzung","Lager · Büro · Wohnen"),("Konstruktion","Massivbau mit Holzdach"),
          ("Leistung","Tragwerksplanung"),("Status","Fertiggestellt")],
   aufgabe="Ein Gewerbestandort entsteht: eine zweigeschossige Lagerhalle, im Obergeschoss Büro und Wohnung. Drei Nutzungen, ein Tragwerk.",
   loesung="Massivbau mit Holzdach: robust im Lagerbetrieb, wirtschaftlich im Bau, wohntauglich im Obergeschoss.",
   scope=["Tragwerksplanung Massivbau mit Holzdach"],
-  title="Gewerbestandort Hennigsdorf — Tragwerksplanung Gewerbebau | Prime Structures",
+  title="Gewerbestandort Hennigsdorf: Tragwerksplanung Gewerbebau | Prime Structures",
   desc="Tragwerksplanung für einen Gewerbestandort in Hennigsdorf: zweigeschossige Lagerhalle mit Büro- und Wohnnutzung als Massivbau mit Holzdach."),
 
  dict(
@@ -97,11 +97,11 @@ PROJECTS = [
   facts=[("Projektart","Gewerbe"),("Standort","Hennigsdorf"),
          ("Konstruktion","Stahlbau"),
          ("Leistung","Tragwerksplanung · Nachweise im Bestand"),("Status","Fertiggestellt")],
-  aufgabe="Zwei Aufgaben an einem Standort: der Neubau einer zweigeschossigen Lagerhalle mit Büro- und Wohnnutzung — und die Umwandlung einer Bestandshalle zur KFZ-Werkstatt mit Lackiererei.",
-  loesung="Für den Neubau: Tragwerksplanung in Stahl. Für den Bestand: Standsicherheitsnachweise inklusive Ersatzprofil-Nachrechnung — die vorhandene Konstruktion wurde rechnerisch belegt statt ersetzt.",
+  aufgabe="Zwei Aufgaben an einem Standort: der Neubau einer zweigeschossigen Lagerhalle mit Büro- und Wohnnutzung sowie die Umwandlung einer Bestandshalle zur KFZ-Werkstatt mit Lackiererei.",
+  loesung="Für den Neubau: Tragwerksplanung in Stahl. Für den Bestand: Standsicherheitsnachweise inklusive Ersatzprofil-Nachrechnung: Die vorhandene Konstruktion wurde rechnerisch belegt statt ersetzt.",
   scope=["Tragwerksplanung Stahlbau (Neubau)","Standsicherheitsnachweise der Bestandshalle",
          "Ersatzprofil-Nachrechnung","Standsicherheitserklärung","Schallschutznachweis"],
-  title="Lagerhalle Philipp-Pforr-Straße Hennigsdorf — Statik Stahlbau | Prime Structures",
+  title="Lagerhalle Philipp-Pforr-Straße Hennigsdorf: Statik Stahlbau | Prime Structures",
   desc="Neubau einer Lagerhalle in Stahl und Nutzungsänderung einer Bestandshalle in Hennigsdorf: Tragwerksplanung, Standsicherheitsnachweise und Ersatzprofil-Nachrechnung."),
 
  dict(
@@ -115,71 +115,71 @@ PROJECTS = [
   aufgabe="Eine eingeschossige Halle mit Pultdach, erschlossen über ein mittig im Giebel angeordnetes Sektionaltor. Große Öffnung, klare Spannweite, wirtschaftliche Konstruktion.",
   loesung="Eingespannte Stahlrahmen mit einbetonierten Stützen: Die Einspannung übernimmt die Aussteifung, die Fassade aus Sandwichpaneelen bleibt frei von Verbänden.",
   scope=["Komplette Tragwerksplanung","Eingespannte Stahlrahmen mit einbetonierten Stützen"],
-  title="Neubau Stahlhalle — Tragwerksplanung Stahlbau | Prime Structures",
+  title="Neubau Stahlhalle: Tragwerksplanung Stahlbau | Prime Structures",
   desc="Komplette Tragwerksplanung einer eingeschossigen Stahlhalle mit Pultdach und Sandwichpaneel-Fassade: eingespannte Stahlrahmen mit einbetonierten Stützen."),
 
  dict(
   slug="doppelhaus-raabestrasse", name="Doppelhaus Raabestraße", cat="Neubau",
   descriptor="Tragwerksplanung für ein auskragendes Vordach in Stahlbeton.",
   hero="raabe-front.jpg", hero_w=2000, hero_h=666,
-  hero_alt="Doppelhaus Raabestraße in Berlin — Frontansicht mit auskragendem Vordach",
+  hero_alt="Doppelhaus Raabestraße in Berlin, Frontansicht mit auskragendem Vordach",
   facts=[("Projektart","Neubau"),("Standort","Berlin"),
          ("Konstruktion","Stahlbeton-Filigranbauweise · Auskragendes Vordach"),
          ("Leistung","Tragwerksplanung"),("Status","Fertiggestellt")],
-  aufgabe="Eine Doppelhaushälfte mit einem weit auskragenden Vordach. Die Auskragung ist das architektonische Motiv — und die statische Aufgabe.",
+  aufgabe="Eine Doppelhaushälfte mit einem weit auskragenden Vordach. Die Auskragung ist das architektonische Motiv und die statische Aufgabe.",
   loesung="Stahlbeton-Filigranbauweise: präzise Fertigteile, monolithisch ergänzt. Das Vordach kragt frei aus, ohne Stützen und ohne sichtbare Technik.",
   scope=["Tragwerksplanung in Stahlbeton-Filigranbauweise","Nachweis des auskragenden Vordachs"],
-  gallery=[("raabe-hero.jpg",1050,667,"Doppelhaus Raabestraße — Nahansicht der Fassade mit auskragendem Vordach","wide")],
-  title="Doppelhaus Raabestraße Berlin — Tragwerksplanung Neubau | Prime Structures",
+  gallery=[("raabe-hero.jpg",1050,667,"Doppelhaus Raabestraße, Nahansicht der Fassade mit auskragendem Vordach","wide")],
+  title="Doppelhaus Raabestraße Berlin: Tragwerksplanung Neubau | Prime Structures",
   desc="Tragwerksplanung für eine Doppelhaushälfte in Berlin: Stahlbeton-Filigranbauweise mit weit auskragendem Vordach ohne Stützen."),
 
  dict(
   slug="villa-schulzendorf", name="Villa Schulzendorf", cat="Neubau",
   descriptor="Architektur und Tragwerksplanung für ein privates Wohnhaus.",
   hero="villa-schulzendorf.jpg", hero_w=1400, hero_h=733,
-  hero_alt="Neubau Villa Schulzendorf — Straßenansicht des Wohnhauses",
+  hero_alt="Neubau Villa Schulzendorf, Straßenansicht des Wohnhauses",
   facts=[("Projektart","Neubau"),("Standort","Schulzendorf"),("Bauherr","Privat"),
          ("Leistung","Architektur und Tragwerksplanung")],
   note="Referenzprojekt aus dem Bestand der bisherigen Prime-Structures-Website. Weitere Projektdaten werden ergänzt.",
   scope=["Architektur","Tragwerksplanung"],
-  title="Neubau Villa Schulzendorf — Architektur & Tragwerksplanung | Prime Structures",
+  title="Neubau Villa Schulzendorf: Statik & Tragwerksplanung | Prime Structures",
   desc="Neubau einer Villa in Schulzendorf: Architektur und Tragwerksplanung aus einer Hand. Referenzprojekt von Prime Structures, Ingenieurbüro für Tragwerksplanung."),
 
  dict(
   slug="einfamilienhaus-1", name="Einfamilienhaus I", cat="Neubau",
   descriptor="Architektur und Tragwerksplanung für ein privates Einfamilienhaus.",
   hero="einfamilienhaus-1.jpg", hero_w=1400, hero_h=1050,
-  hero_alt="Neubau Einfamilienhaus I — Ansicht des Wohnhauses mit Satteldach",
+  hero_alt="Neubau Einfamilienhaus I, Ansicht des Wohnhauses mit Satteldach",
   facts=[("Projektart","Neubau"),("Bauherr","Privat"),
          ("Leistung","Architektur und Tragwerksplanung")],
   note="Referenzprojekt aus dem Bestand der bisherigen Prime-Structures-Website. Weitere Projektdaten werden ergänzt.",
   scope=["Architektur","Tragwerksplanung"],
-  title="Neubau Einfamilienhaus I — Architektur & Tragwerksplanung | Prime Structures",
+  title="Neubau Einfamilienhaus I: Statik & Tragwerksplanung | Prime Structures",
   desc="Neubau eines Einfamilienhauses: Architektur und Tragwerksplanung von Prime Structures, Ingenieurbüro für Tragwerksplanung in Berlin und Brandenburg."),
 
  dict(
   slug="wochenendhaus", name="Wochenendhaus", cat="Neubau",
   descriptor="Architektur und Tragwerksplanung für ein Wochenendhaus in Holzbauweise.",
   hero="wochenendhaus.jpg", hero_w=1400, hero_h=1107,
-  hero_alt="Neubau Wochenendhaus — Visualisierung des holzverkleideten Baukörpers",
+  hero_alt="Neubau Wochenendhaus, Visualisierung des holzverkleideten Baukörpers",
   hero_caption="Visualisierung",
   facts=[("Projektart","Neubau"),("Bauherr","Privat"),
          ("Leistung","Architektur und Tragwerksplanung")],
   note="Referenzprojekt aus dem Bestand der bisherigen Prime-Structures-Website. Die Darstellung ist eine Visualisierung; weitere Projektdaten werden ergänzt.",
   scope=["Architektur","Tragwerksplanung"],
-  title="Neubau Wochenendhaus — Architektur & Tragwerksplanung | Prime Structures",
+  title="Neubau Wochenendhaus: Statik & Tragwerksplanung | Prime Structures",
   desc="Neubau eines Wochenendhauses: Architektur und Tragwerksplanung von Prime Structures, Ingenieurbüro für Tragwerksplanung in Berlin und Brandenburg."),
 
  dict(
   slug="einfamilienhaus-2", name="Einfamilienhaus II", cat="Neubau",
   descriptor="Architektur und Tragwerksplanung für ein privates Einfamilienhaus.",
   hero="einfamilienhaus-2.jpg", hero_w=1400, hero_h=1150,
-  hero_alt="Neubau Einfamilienhaus II — Ansicht mit Terrasse",
+  hero_alt="Neubau Einfamilienhaus II, Ansicht mit Terrasse",
   facts=[("Projektart","Neubau"),("Bauherr","Privat"),
          ("Leistung","Architektur und Tragwerksplanung")],
   note="Referenzprojekt aus dem Bestand der bisherigen Prime-Structures-Website. Weitere Projektdaten werden ergänzt.",
   scope=["Architektur","Tragwerksplanung"],
-  title="Neubau Einfamilienhaus II — Architektur & Tragwerksplanung | Prime Structures",
+  title="Neubau Einfamilienhaus II: Statik & Tragwerksplanung | Prime Structures",
   desc="Neubau eines Einfamilienhauses: Architektur und Tragwerksplanung von Prime Structures, Ingenieurbüro für Tragwerksplanung in Berlin und Brandenburg."),
 ]
 
@@ -220,7 +220,7 @@ HEADER = '''<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
 <header class="site-header site-header--over">
   <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="Prime Structures — Startseite">
+    <a class="logo" href="index.html" aria-label="Prime Structures: Startseite">
       <img src="assets/prime-structures-lockup-black.svg" alt="Prime Structures">
     </a>
     <nav class="nav" aria-label="Hauptnavigation">

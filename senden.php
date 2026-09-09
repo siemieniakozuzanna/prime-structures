@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Honeypot field — must remain empty
+// Honeypot field: must remain empty
 if (!empty($_POST['website'])) {
     http_response_code(400);
     echo json_encode(['ok' => false, 'error' => 'Spam detected']);
