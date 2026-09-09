@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=52">
+<link rel="stylesheet" href="styles.css?v=53">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -492,38 +492,72 @@
   <!-- Kundenstimmen -->
   <section class="section" id="stimmen">
     <div class="container">
-      <p class="label reveal">Kundenstimmen</p>
-      <h2 class="h2 reveal d1">Erfahrungen aus der Zusammenarbeit mit Prime Structures.</h2>
-      <div class="reviews-grid">
-        <figure class="review-card reveal d1">
-          <span class="review-card__quote-mark" aria-hidden="true">„</span>
-          <div class="review-card__stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
-          <blockquote class="review-card__text">Mit Herrn Russo ein angenehmes Arbeitsklima gehabt. Ein ganzes MFH gerechnet und geprüft in weniger als 4 Wochen. Bin sehr zufrieden. Vielen Dank.</blockquote>
-          <figcaption class="review-card__meta">
-            <span class="review-card__name">Martin</span>
-            <span class="review-card__source">Google Bewertung</span>
-          </figcaption>
-        </figure>
-        <figure class="review-card reveal d2">
-          <span class="review-card__quote-mark" aria-hidden="true">„</span>
-          <div class="review-card__stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
-          <blockquote class="review-card__text">Bei unserer Villa-Aufstockung hat einfach alles gepasst. Besonders geschätzt haben wir die persönliche, menschliche Betreuung und die professionelle Umsetzung. Auch Änderungen während des Prozesses wurden flexibel und lösungsorientiert umgesetzt. Vielen Dank Giuliano!</blockquote>
-          <figcaption class="review-card__meta">
-            <span class="review-card__name">Jimmy Schulze</span>
-            <span class="review-card__source">Google Bewertung</span>
-          </figcaption>
-        </figure>
-        <figure class="review-card reveal d3">
-          <span class="review-card__quote-mark" aria-hidden="true">„</span>
-          <div class="review-card__stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
-          <blockquote class="review-card__text">Wir hatten eine durchweg tolle Erfahrung mit Prime Structures. Von der ersten Beratung bis zur finalen Planung verlief alles äußerst professionell, transparent und unkompliziert. Besonders Herr Giuliano hat uns mit seiner Erreichbarkeit, seinem Engagement und seiner geduldigen Beratung überzeugt. Er hat sich viel Zeit genommen, ist auf unsere Wünsche eingegangen und hat uns während des gesamten Prozesses das Gefühl gegeben, bestens aufgehoben zu sein. Wir haben uns rundum gut betreut gefühlt und würden jederzeit wieder mit Prime Structures zusammenarbeiten. Klare Weiterempfehlung.</blockquote>
-          <figcaption class="review-card__meta">
-            <span class="review-card__name">Yasin Öztürk</span>
-            <span class="review-card__source">Google Bewertung</span>
-          </figcaption>
-        </figure>
+      <header class="reviews-head">
+        <div class="reviews-head__intro">
+          <p class="label reveal">Kundenstimmen</p>
+          <h2 class="h2 reveal d1">Was Kunden über die Zusammenarbeit mit Prime Structures sagen.</h2>
+        </div>
+        <div class="reviews-head__rating reveal d2">
+          <p class="reviews-score">
+            <span class="reviews-score__value">5,0</span>
+            <span class="reviews-score__body">
+              <span class="reviews-score__stars" role="img" aria-label="5 von 5 Sternen">★★★★★</span>
+              <span class="reviews-score__count">23 Google Bewertungen</span>
+            </span>
+          </p>
+          <a class="arrow-link" href="https://maps.app.goo.gl/Akw9pMp4PvSyKywB7" target="_blank" rel="noopener noreferrer">Alle Google-Bewertungen <span class="arr">→</span></a>
+        </div>
+      </header>
+
+      <div class="reviews-carousel reveal d2">
+        <div class="reviews-scroller" role="group" aria-label="Kundenbewertungen" tabindex="0">
+          <figure class="review-card reveal d1">
+            <div class="review-card__stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote class="review-card__text">
+              <p>Mit Herrn Russo ein angenehmes Arbeitsklima gehabt. Ein ganzes MFH gerechnet und geprüft in weniger als 4 Wochen. Bin sehr zufrieden. Vielen Dank.</p>
+            </blockquote>
+            <figcaption class="review-card__meta">
+              <span class="review-card__avatar" aria-hidden="true">M</span>
+              <span class="review-card__meta-text">
+                <span class="review-card__name">Martin</span>
+                <span class="review-card__source">Google Bewertung</span>
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="review-card reveal d2">
+            <div class="review-card__stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote class="review-card__text">
+              <p>Bei unserer Villa-Aufstockung hat einfach alles gepasst. Besonders geschätzt haben wir die persönliche, menschliche Betreuung und die professionelle Umsetzung. Auch Änderungen während des Prozesses wurden flexibel und lösungsorientiert umgesetzt. Vielen Dank Giuliano!</p>
+            </blockquote>
+            <figcaption class="review-card__meta">
+              <span class="review-card__avatar" aria-hidden="true">JS</span>
+              <span class="review-card__meta-text">
+                <span class="review-card__name">Jimmy Schulze</span>
+                <span class="review-card__source">Google Bewertung</span>
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="review-card reveal d3">
+            <div class="review-card__stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote class="review-card__text">
+              <p>Wir hatten eine durchweg tolle Erfahrung mit Prime Structures. Von der ersten Beratung bis zur finalen Planung verlief alles äußerst professionell, transparent und unkompliziert. Besonders Herr Giuliano hat uns mit seiner Erreichbarkeit, seinem Engagement und seiner geduldigen Beratung überzeugt. Er hat sich viel Zeit genommen, ist auf unsere Wünsche eingegangen und hat uns während des gesamten Prozesses das Gefühl gegeben, bestens aufgehoben zu sein. Wir haben uns rundum gut betreut gefühlt und würden jederzeit wieder mit Prime Structures zusammenarbeiten. Klare Weiterempfehlung.</p>
+            </blockquote>
+            <figcaption class="review-card__meta">
+              <span class="review-card__avatar" aria-hidden="true">YÖ</span>
+              <span class="review-card__meta-text">
+                <span class="review-card__name">Yasin Öztürk</span>
+                <span class="review-card__source">Google Bewertung</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="reviews-nav">
+          <button type="button" class="reviews-nav__btn" data-dir="-1" aria-label="Vorherige Bewertung"><span aria-hidden="true">&larr;</span></button>
+          <button type="button" class="reviews-nav__btn" data-dir="1" aria-label="Nächste Bewertung"><span aria-hidden="true">&rarr;</span></button>
+        </div>
       </div>
-      <a class="arrow-link reviews-more reveal" href="https://maps.app.goo.gl/Akw9pMp4PvSyKywB7" target="_blank" rel="noopener noreferrer">Alle Google-Bewertungen ansehen <span class="arr">→</span></a>
+
+      <p class="reviews-social reveal"><a class="arrow-link" href="https://www.instagram.com/primestructures.de/" target="_blank" rel="noopener noreferrer">Prime Structures auf Instagram <span class="arr">→</span></a></p>
     </div>
   </section>
 
@@ -689,6 +723,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=18"></script>
+<script src="main.js?v=19"></script>
 </body>
 </html>

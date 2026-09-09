@@ -301,3 +301,41 @@
     input.addEventListener('change', renderFiles);
   });
 })();
+
+// Reviews — scroll-snap carousel controls (mobile only; desktop shows all three cards)
+(function () {
+  var scroller = document.querySelector('.reviews-scroller');
+  if (!scroller) return;
+  var btns = document.querySelectorAll('.reviews-nav__btn');
+  if (!btns.length) return;
+  var reducedMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function step() {
+    var card = scroller.querySelector('.review-card');
+    if (!card) return scroller.clientWidth;
+    var gap = parseFloat(getComputedStyle(scroller).columnGap) || 16;
+    return card.getBoundingClientRect().width + gap;
+  }
+
+  function update() {
+    var max = scroller.scrollWidth - scroller.clientWidth - 2;
+    Array.prototype.forEach.call(btns, function (b) {
+      var dir = parseInt(b.getAttribute('data-dir'), 10);
+      b.disabled = dir < 0 ? scroller.scrollLeft <= 2 : scroller.scrollLeft >= max;
+    });
+  }
+
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener('click', function () {
+      var dir = parseInt(b.getAttribute('data-dir'), 10);
+      scroller.scrollBy({
+        left: step() * dir,
+        behavior: reducedMq.matches ? 'auto' : 'smooth'
+      });
+    });
+  });
+
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
